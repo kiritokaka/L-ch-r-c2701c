@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#08090a"
+    >
+
+    <meta
+        name="description"
+        content="Lịch phân công đổ rác cho căn nhà."
+    >
+
+    <title>Trash Duty — Home Rotation</title>
+
+
+    <!-- Google Fonts -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+
+<body>
+
+
+    <!-- =================================================
+         BACKGROUND
+    ================================================== -->
+
+    <div
+        class="ambient ambient-a"
+        aria-hidden="true"
+    ></div>
+
+    <div
+        class="ambient ambient-b"
+        aria-hidden="true"
+    ></div>
+
+    <div
+        class="page-noise"
+        aria-hidden="true"
+    ></div>
+
+
+
+    <!-- =================================================
+         APP
+    ================================================== -->
+
+    <main class="app">
+
+
+        <!-- =============================================
+             NAVIGATION
+        ============================================== -->
+
+        <nav class="navbar">
+
+
+            <a
+                href="#"
+                class="brand"
+                aria-label="Trash Duty"
+            >
+
+                <div class="brand-mark">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-hidden="true"
+                    >
+
+                        <path
+                            d="M5 7H19"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M9 3H15"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M7 7L8 20H16L17 7"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linejoin="round"
+                        />
+
+                    </svg>
+
+                </div>
+
+
+                <div class="brand-copy">
+
+                    <strong>
+                       Lịch Đổ Rác
+                    </strong>
+
+                    <span>
+                        2701C ❤️
+                    </span>
+
+                </div>
+
+            </a>
+
+
+
+            <div class="nav-status">
+
+                <span class="live-dot"></span>
+
+                <span class="desktop-status">
+                    Đang Hoạt Động
+                </span>
+
+            </div>
+
+        </nav>
+
+
+
+        <!-- =============================================
+             HERO
+        ============================================== -->
+
+        <section class="hero">
+
+
+            <!-- LEFT -->
+
+            <div class="hero-content">
+
+
+                <div class="hero-meta">
+
+                    <span>
+                        Lịch Trình Hôm Nay
+                    </span>
+
+                    <span class="hero-meta-line"></span>
+
+                </div>
+
+
+
+                <p
+                    id="today-date"
+                    class="today-date"
+                >
+                    Đang tải ngày...
+                </p>
+
+
+
+                <div class="assignment">
+
+
+                    <div
+                        id="today-avatar"
+                        class="hero-avatar"
+                    >
+                        ?
+                    </div>
+
+
+
+                    <div class="assignment-copy">
+
+                        <p>
+                            Đến lượt
+                        </p>
+
+
+                        <div class="name-wrapper">
+
+                            <h1
+                                id="today-person"
+                                data-text="..."
+                            >
+                                ...
+                            </h1>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-message">
+                    <p style="color: rgb(226, 48, 48);"> Tính Năng</p>
+                    <div class="message-arrow">
+                        ✔
+                    </div>
+
+                    <p>
+                        Xem lịch đổ rác hằng ngày của mọi người trong nhà
+                    </p>
+
+                       <div class="message-arrow">
+                        ✔
+                    </div>
+
+                    <p>
+                        Kiểm tra lại lịch đổ rác của người hôm trước
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="scroll-hint">
+
+                    <span class="scroll-line"></span>
+
+                    <span>
+                        Mọi người cùng nhau cố gắng thực hiện theo lịch phân công, Rác sẽ được chốt vào trước 22h30 hằng ngày ( mang ra để ở khu vực rác trong nhà trước 22h30 để người được phân công hôm đó thực hiện đổ rác ) 
+                    </span>
+                      <span class="penalty-text">
+                     Nếu ai không thực hiện đổ rác theo lịch sẽ tự nguyện đóng vào quỹ nhà 20k/một lần
+        </span>
+
+                </div>
+                    
+            </div>
+
+
+
+            <!-- RIGHT -->
+
+            <div
+                class="hero-art"
+                aria-hidden="true"
+            >
+
+
+                <div class="art-grid"></div>
+
+
+                <div class="orbit orbit-large">
+
+                    <span></span>
+
+                </div>
+
+
+                <div class="orbit orbit-small">
+
+                    <span></span>
+
+                </div>
+
+
+
+                <div class="bin-object">
+
+                    <div class="bin-card">
+
+                        <svg
+                            viewBox="0 0 120 120"
+                            fill="none"
+                        >
+
+                            <path
+                                d="M31 39H89"
+                                stroke="currentColor"
+                                stroke-width="4"
+                                stroke-linecap="round"
+                            />
+
+                            <path
+                                d="M48 26H72"
+                                stroke="currentColor"
+                                stroke-width="4"
+                                stroke-linecap="round"
+                            />
+
+                            <path
+                                d="M38 39L42 92H78L82 39"
+                                stroke="currentColor"
+                                stroke-width="4"
+                                stroke-linejoin="round"
+                            />
+
+                            <path
+                                d="M52 54V78"
+                                stroke="currentColor"
+                                stroke-width="4"
+                                stroke-linecap="round"
+                            />
+
+                            <path
+                                d="M68 54V78"
+                                stroke="currentColor"
+                                stroke-width="4"
+                                stroke-linecap="round"
+                            />
+
+                        </svg>
+
+                    </div>
+
+
+                    <span>
+                        Hôm nay đến bạn đó, nhớ làm nhé
+                    </span>
+
+                </div>
+
+
+                <div class="coordinate coord-a">
+                    28.09
+                </div>
+
+                <div class="coordinate coord-b">
+                    05 / Thành Viên
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =============================================
+             QUICK DATA
+        ============================================== -->
+
+        <section class="quick-data">
+
+
+            <article>
+
+                <span class="data-number">
+                    01
+                </span>
+
+                <div>
+
+                    <span class="data-label">
+                        Thành Viên
+                    </span>
+
+                    <strong>
+                        5 người
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+
+            <article>
+
+                <span class="data-number">
+                    02
+                </span>
+
+                <div>
+
+                    <span class="data-label">
+                        Cập Nhập
+                    </span>
+
+                    <strong>
+                        Mỗi ngày
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+
+            <article>
+
+                <span class="data-number">
+                    03
+                </span>
+
+                <div>
+
+                    <span class="data-label">
+                        Ngày bắt đầu
+                    </span>
+
+                    <strong>
+                        28.09.2026
+                    </strong>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+
+        <!-- =============================================
+             CALENDAR
+        ============================================== -->
+
+        <section
+            class="calendar-section scroll-reveal"
+        >
+
+
+            <header class="section-heading">
+
+
+                <div class="heading-index">
+                    01
+                </div>
+
+
+                <div class="heading-copy">
+
+                    <p>
+                        Bảng lịch cụ thể
+                    </p>
+
+                    <h2>
+                        Lịch phân công
+                    </h2>
+
+                </div>
+
+
+
+                <div class="calendar-controls">
+
+
+                    <button
+                        id="prev-month"
+                        class="control-btn square-btn"
+                        aria-label="Tháng trước"
+                    >
+                        ←
+                    </button>
+
+
+                    <button
+                        id="today-btn"
+                        class="control-btn current-btn"
+                    >
+                        Hôm nay
+                    </button>
+
+
+                    <button
+                        id="next-month"
+                        class="control-btn square-btn"
+                        aria-label="Tháng sau"
+                    >
+                        →
+                    </button>
+
+
+                </div>
+
+            </header>
+
+
+
+            <div class="calendar-panel">
+
+
+                <div class="calendar-panel-head">
+
+
+                    <div>
+
+                        <span>
+                            Lịch Tháng
+                        </span>
+
+                        <h3 id="calendar-title">
+                            Tháng ...
+                        </h3>
+
+                    </div>
+
+
+
+                    <div class="today-legend">
+
+                        <i></i>
+
+                        Hôm nay
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="calendar-scroll">
+
+
+                    <div class="calendar-inner">
+
+
+                        <div class="week-header">
+
+                            <div>T2</div>
+                            <div>T3</div>
+                            <div>T4</div>
+                            <div>T5</div>
+                            <div>T6</div>
+                            <div>T7</div>
+                            <div>CN</div>
+
+                        </div>
+
+
+
+                        <div
+                            id="calendar"
+                            class="calendar-grid"
+                        ></div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =============================================
+             INCIDENT
+        ============================================== -->
+
+        <section
+            class="incident-section scroll-reveal"
+        >
+
+
+            <div class="incident-watermark">
+                ?
+            </div>
+
+
+            <div class="incident-index">
+                02
+            </div>
+
+
+
+            <div class="incident-copy">
+
+                <p class="eyebrow">
+                    Tính năng check lịch của người hôm trước
+                </p>
+
+                <h2>
+                    Nếu bạn bắt đầu lịch của mình và thấy ' Rác Cũ ' trong nhà vẫn còn
+                </h2>
+
+                <p class="incident-description">
+                    -> bấm vào nút bên cạnh để kiểm tra
+                </p>
+
+            </div>
+
+
+
+            <button
+                id="check-btn"
+                class="action-btn"
+            >
+
+                <span>
+                    Check hôm qua
+                </span>
+
+                <span class="action-arrow">
+                    ↗
+                </span>
+
+            </button>
+
+
+        </section>
+
+
+
+        <!-- =============================================
+             ROTATION
+        ============================================== -->
+
+        <section
+            class="rotation-section scroll-reveal"
+        >
+
+
+            <header class="section-heading rotation-heading">
+
+
+                <div class="heading-index">
+                    03
+                </div>
+
+
+                <div class="heading-copy">
+
+                    <p>
+                        Logic hệ thống phân công lịch đổ rác
+                    </p>
+
+                    <h2>
+                        Theo sơ đồ sau:
+                    </h2>
+
+                </div>
+
+            </header>
+
+
+
+            <div class="rotation-track">
+
+
+                <article class="member-card">
+
+                    <span>01</span>
+
+                    <div class="member-avatar">
+                        H
+                    </div>
+
+                    <strong>
+                        Huy
+                    </strong>
+
+                </article>
+
+
+                <div class="track-line">
+                    <span>→</span>
+                </div>
+
+
+                <article class="member-card">
+
+                    <span>02</span>
+
+                    <div class="member-avatar">
+                        L
+                    </div>
+
+                    <strong>
+                        Lgont
+                    </strong>
+
+                </article>
+
+
+                <div class="track-line">
+                    <span>→</span>
+                </div>
+
+
+                <article class="member-card">
+
+                    <span>03</span>
+
+                    <div class="member-avatar">
+                        J
+                    </div>
+
+                    <strong>
+                        Jerry
+                    </strong>
+
+                </article>
+
+
+                <div class="track-line">
+                    <span>→</span>
+                </div>
+
+
+                <article class="member-card">
+
+                    <span>04</span>
+
+                    <div class="member-avatar">
+                        H
+                    </div>
+
+                    <strong>
+                        Hương
+                    </strong>
+
+                </article>
+
+
+                <div class="track-line">
+                    <span>→</span>
+                </div>
+
+
+                <article class="member-card">
+
+                    <span>05</span>
+
+                    <div class="member-avatar">
+                        MB
+                    </div>
+
+                    <strong>
+                        Mì Béo
+                    </strong>
+
+                </article>
+
+
+                <div class="track-line loop-line">
+                    <span>↻</span>
+                </div>
+
+
+            </div>
+
+
+            <p class="rotation-note">
+
+                5 người / 5 ngày -> lặp liên tục
+
+            </p>
+
+
+        </section>
+
+
+
+        <!-- =============================================
+             FOOTER
+        ============================================== -->
+
+        <footer>
+
+
+            <div>
+
+                <strong>
+                    Ứng Dụng Lịch Đổ Rác
+                </strong>
+
+                <span>
+                    2701C
+                </span>
+
+            </div>
+
+
+            <p>
+                Phát triển bởi Min Nhin 
+            </p>
+
+
+            <span>
+                EST. 2026
+            </span>
+
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- =============================================
+         MODAL
+    ============================================== -->
+
+    <div
+        id="modal"
+        class="modal"
+        aria-hidden="true"
+    >
+
+
+        <div class="modal-card">
+
+
+            <button
+                id="close-modal"
+                class="modal-close"
+                aria-label="Đóng"
+            >
+                ×
+            </button>
+
+
+
+            <div class="modal-tags">
+
+                <span>
+                    Trường Hợp 01
+                </span>
+
+                <span class="active-tag">
+                    CHECK
+                </span>
+
+            </div>
+
+
+
+            <div class="case-symbol">
+                ?
+            </div>
+
+
+
+            <p class="eyebrow">
+                Kiểm Tra ai là người chưa đổ rác
+            </p>
+
+
+            <h2>
+                Tên người chưa đổ rác:
+            </h2>
+
+
+
+            <div class="suspect-card">
+
+
+                <div
+                    id="yesterday-avatar"
+                    class="suspect-avatar"
+                >
+                    ?
+                </div>
+
+
+                <div>
+
+                    <p>
+                        Người chưa đổ rác là:
+                    </p>
+
+                    <h3 id="yesterday-person">
+                        ...
+                    </h3>
+
+                </div>
+
+
+            </div>
+
+
+
+            <p
+                id="yesterday-date"
+                class="modal-date"
+            ></p>
+
+
+
+            <div class="case-note">
+
+                <span>
+                    NOTE
+                </span>
+
+                <p>
+                    Nếu qua ngày mới -> sang lịch đổ rác mới mà túi rác vẫn còn nguyên thì trách nhiệm thuộc người có tên ở trên
+                    
+                </p>
+
+            </div>
+
+
+
+            <button
+                id="understood-btn"
+                class="modal-action"
+            >
+
+                <span>
+                    Đóng tab, hãy nhắc nhở họ nộp quỹ nhà + đổ rác!
+                </span>
+
+                <span>
+                    ✓
+                </span>
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
